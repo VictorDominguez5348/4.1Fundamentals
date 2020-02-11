@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(MainActivity.this,
+                        OrderActivity.class);
+                startActivity(intent);
             }
         });
+
     }
 
     @Override
@@ -65,18 +67,8 @@ public class MainActivity extends AppCompatActivity {
         displayToast(getString(R.string.ice_cream_order_message));
     }
 
-    /**
-     * Shows a message that the froyo image was clicked.
-     */
     public void showFroyoOrder(View view) {
         displayToast(getString(R.string.froyo_order_message));
     }
-    FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,
-                        OrderActivity.class);
-                startActivity(intent);
-            }
-}
+
+    }
