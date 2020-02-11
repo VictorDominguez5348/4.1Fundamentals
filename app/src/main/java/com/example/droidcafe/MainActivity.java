@@ -71,8 +71,12 @@ public class MainActivity extends AppCompatActivity {
     public void showFroyoOrder(View view) {
         displayToast(getString(R.string.froyo_order_message));
     }
-    public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this, OrderActivity.class);
-        startActivity(intent);
-    }
+    FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,
+                        OrderActivity.class);
+                startActivity(intent);
+            }
 }
